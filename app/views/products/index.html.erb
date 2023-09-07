@@ -1,0 +1,17 @@
+<h2>Apple Production</h2>
+
+  <div class="card-group">
+    <% @products.each do |product| %>
+      <div class="col-md-4">
+        <div class="card border-primary rounded-3" style="max-width: 18rem;">
+         <%= image_tag(product.img,  class: 'rounded-3') %>
+          <div class="card-body">
+          <h5 class="card-title"><%= product.model %></h5>
+          <h6 class="card-subtitle mb-2 fw-bold"><%= product.brand %></h6>
+            <p class="card-text"><%= product.description %></p>
+            <%= link_to 'Show', product_path(product), class: 'btn btn-info' %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
